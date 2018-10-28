@@ -58,12 +58,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4448284358388934}
   - component: {fileID: 82592233869141302}
+  - component: {fileID: 198231355442113772}
   - component: {fileID: 120336275265090100}
   - component: {fileID: 108324821859077144}
   - component: {fileID: 135781605183154020}
   - component: {fileID: 114140680280470892}
-  - component: {fileID: 199595447875145878}
-  - component: {fileID: 198077462614622740}
+  - component: {fileID: 199476397631306596}
   m_Layer: 0
   m_Name: CannonTip
   m_TagString: Untagged
@@ -108,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141090717844504}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 23.3, y: 0.4077397, z: 19.2}
+  m_LocalPosition: {x: 20.104088, y: 0.39899004, z: 18.133709}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4448284358388934}
@@ -358,7 +358,7 @@ Animator:
   m_GameObject: {fileID: 1141090717844504}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2f36ff213ce19454f80e5be2bd75e2fd, type: 3}
-  m_Controller: {fileID: 9100000, guid: 439c682f59b8743eda963acee0c72045, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257451754979730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5460cff0a7fa24e16821e141df2a1140, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bc54f60f20bf44299ade48dea736f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerShot: 20
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1141090717844504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569022f48141f4d0ebc407c4fc6b9ca9, type: 3}
+  m_Script: {fileID: 11500000, guid: 018eaf1e17bc348b7865881cf29c8d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1141090717844504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e3aa3f107c845e89c34bad1c18ffc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 853a0f63f0a0342749a15005d914149c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!120 &120336275265090100
@@ -460,7 +460,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a9bc6c7ef63744aeda3577968a65659a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -570,7 +570,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!198 &198077462614622740
+--- !u!198 &198231355442113772
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5169,7 +5169,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199595447875145878
+--- !u!199 &199476397631306596
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -5185,8 +5185,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0716b4c71425f41459c55fbc6106bf26, type: 2}
-  - {fileID: 2100000, guid: 0716b4c71425f41459c55fbc6106bf26, type: 2}
+  - {fileID: 2100000, guid: ad5e425e1464e4e9a85679d7e3faf8c1, type: 2}
+  - {fileID: 2100000, guid: ad5e425e1464e4e9a85679d7e3faf8c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
