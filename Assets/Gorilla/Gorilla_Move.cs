@@ -6,7 +6,7 @@ using UnityEngine;
 public class Gorilla_Move : MonoBehaviour {
 
     Quaternion targetRotation;
-    public float speed, forward, turn;
+    public float speed, forward, turn, run;
     Rigidbody gorilla;
     public Animator anim;
 
@@ -17,21 +17,30 @@ public class Gorilla_Move : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        speed = 20f;
+        speed = 10f;
         targetRotation = transform.rotation;
         gorilla = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         forward = 0;
         turn = 0;
-        anim.applyRootMotion = true;
-    }
+        run = 0;
+	}
 	
 	// Update is called once per frame
 	void Update () {
         forward = Input.GetAxis("Vertical");
         turn = Input.GetAxis("Horizontal");
-       
-        //anim.SetFloat("velx", turn);
+        run = Input.GetAxis("Run");
+        if (run != 0 && speed <=20)
+        {
+            speed += 1;
+        } else if (run == 0)
+        {
+            if (speed >= 10)
+            {
+                speed = speed - 1;
+            }
+        }
         if (Mathf.Abs(turn) > 0.1f)
         {
             targetRotation *= Quaternion.AngleAxis(100 * turn * Time.deltaTime, Vector3.forward);
@@ -48,7 +57,6 @@ public class Gorilla_Move : MonoBehaviour {
         {
             gorilla.velocity = Vector3.zero;
         }
-        anim.SetFloat("velx", gorilla.velocity.magnitude/20);
-        Debug.Log(gorilla.velocity.magnitude/20);
+        anim.SetFloat("velx", gorilla.velocity.magnitude / 20);
     }
 }
