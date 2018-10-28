@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class GorillaHealth : MonoBehaviour {
 
-    public int startingHealth = 10;
+    public int startingHealth = 100;
+    public Slider healthSlider;
     public int currentHealth;
     public Animator anim;
     ParticleSystem hitParticles;
@@ -22,6 +24,7 @@ public class GorillaHealth : MonoBehaviour {
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
+        healthSlider.value = startingHealth;
 	}
 	
 	// Update is called once per frame
@@ -37,6 +40,7 @@ public class GorillaHealth : MonoBehaviour {
         //enemyAudio.Play();
 
         currentHealth -= amount;
+        healthSlider.value = currentHealth;
 
         hitParticles.transform.position = hitPoint;
         hitParticles.Play();
