@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class GorillaHealth : MonoBehaviour {
 
-    public int startingHealth = 1000000;
+    public int startingHealth = 10;
     public int currentHealth;
-
+    public Animator anim;
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     bool isDead;
@@ -20,7 +21,7 @@ public class GorillaHealth : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-		
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +50,7 @@ public class GorillaHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
-
+        anim.SetBool("Dead", true);
         //playerShooting.DisableEffects();
 
         //anim.SetTrigger("Die");
