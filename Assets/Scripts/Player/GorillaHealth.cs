@@ -11,14 +11,14 @@ public class GorillaHealth : MonoBehaviour {
     public int currentHealth;
     public Animator anim;
     ParticleSystem hitParticles;
-    CapsuleCollider capsuleCollider;
+    //CapsuleCollider capsuleCollider;
     bool isDead;
     bool damaged;
 
     private void Awake()
     {
         hitParticles = GetComponentInChildren<ParticleSystem>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
+        //capsuleCollider = GetComponent<CapsuleCollider>();
         currentHealth = startingHealth;
     }
     // Use this for initialization
@@ -54,7 +54,7 @@ public class GorillaHealth : MonoBehaviour {
     void Death()
     {
         isDead = true;
-        anim.SetBool("Dead", true);
+        anim.SetTrigger("Die");
         //playerShooting.DisableEffects();
 
         //anim.SetTrigger("Die");

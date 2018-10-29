@@ -11,7 +11,7 @@ public class TankHealth : MonoBehaviour {
     public int currentHealth;
 
     Animator anim;
-    CapsuleCollider capsuleCollider;
+    BoxCollider boxCollider;
     bool isDead;
     bool isSinking;
 
@@ -19,7 +19,7 @@ public class TankHealth : MonoBehaviour {
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
+        boxCollider = GetComponent<BoxCollider>();
         currentHealth = startingHealth;
     }
 
@@ -40,13 +40,13 @@ public class TankHealth : MonoBehaviour {
 
     }
 
-    public void TakeDamage (int amount, Vector2 hitPoint){
+    public void TakeDamage (int amount){
         if(isDead){
             return;
         }
 
         //TODO: Add tank getting attacked audio 
-
+        print("Tank is taking damage");
         currentHealth -= amount;
 
         if(currentHealth <= 0){
@@ -58,10 +58,10 @@ public class TankHealth : MonoBehaviour {
 
     public void Death(){
         isDead = true;
-        capsuleCollider.isTrigger = true;
+        boxCollider.isTrigger = true;
 
         //Set trigger on tank animator to play the death animation
-        anim.SetTrigger("Dead");
+        anim.SetTrigger("Explode");
 
         //TODO: Add dead animation and audio here
     }

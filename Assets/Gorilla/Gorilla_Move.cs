@@ -46,7 +46,15 @@ public class Gorilla_Move : MonoBehaviour {
             targetRotation *= Quaternion.AngleAxis(100 * turn * Time.deltaTime, Vector3.forward);
         }
         transform.rotation = targetRotation;
-	}
+
+
+        if (Input.anyKeyDown)
+        {
+
+            print(Input.inputString);
+
+        }
+    }
 
     void FixedUpdate()
     {

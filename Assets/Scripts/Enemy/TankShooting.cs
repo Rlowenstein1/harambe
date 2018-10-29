@@ -21,8 +21,9 @@ public class TankShooting : MonoBehaviour {
 
 
     GameObject player;
+    GameObject tank;
     GorillaHealth playerHealth;
-    TankHealth enemyHealth;
+    TankHealth health;
     bool playerInRange;
 
 
@@ -34,9 +35,10 @@ public class TankShooting : MonoBehaviour {
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
 
+        tank = GameObject.FindGameObjectWithTag("Enemy");
+        health = tank.GetComponent<TankHealth>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<GorillaHealth>();
-        enemyHealth = GetComponent<TankHealth>();
 
 
     }
@@ -59,18 +61,12 @@ public class TankShooting : MonoBehaviour {
         }
     }
 
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenBullets && playerInRange && playerHealth.currentHealth > 0)
+        if (timer >= timeBetweenBullets && playerInRange && playerHealth.currentHealth > 0 && health.currentHealth > 0)
         {
             Shoot();
         }
@@ -80,11 +76,6 @@ public class TankShooting : MonoBehaviour {
             DisableEffects();
         }
 
-
-        if (playerHealth.currentHealth <= 0)
-        {
-            //anim.SetTrigger("PlayerDead");
-        }
     }
 
     public void DisableEffects()
