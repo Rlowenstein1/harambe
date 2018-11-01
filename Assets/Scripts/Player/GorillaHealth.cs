@@ -12,7 +12,7 @@ public class GorillaHealth : MonoBehaviour {
     public Animator anim;
     ParticleSystem hitParticles;
     //CapsuleCollider capsuleCollider;
-    bool isDead;
+    public bool isDead;
     bool damaged;
 
     private void Awake()

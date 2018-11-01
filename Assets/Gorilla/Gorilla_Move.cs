@@ -10,6 +10,7 @@ public class Gorilla_Move : MonoBehaviour {
     public float speed, forward, turn, run, attack, jump;
     public Rigidbody gorilla;
     public Animator anim;
+    GorillaHealth gorillaHealth;
 
     public Quaternion Rotation
     {
@@ -26,50 +27,55 @@ public class Gorilla_Move : MonoBehaviour {
         turn = 0;
         run = 0;
         attack = 0;
+        gorillaHealth = GetComponent<GorillaHealth>();
         anim.applyRootMotion = true;
      }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        forward = Input.GetAxis("Vertical");
-        turn = Input.GetAxis("Horizontal");
-        run = Input.GetAxis("Run");
-        attack = Input.GetAxis("Fire1");
-        jump = Input.GetAxis("Jump");
-        if(jump >= 0.5)
+        if (!gorillaHealth.isDead)
         {
-            anim.SetTrigger("Jump");
-        }
-        if (attack >= 0.5)
-        {
-            anim.SetTrigger("Attack");
-        } 
-        if (run != 0 && speed <=8)
-        {
-            speed += 1;
-        } else if (run == 0)
-        {
-        if (speed >= 5)
-        {
-           speed = speed - 1;
-        }
-        }
-    
-        
-        if (Mathf.Abs(turn) > 0.1f)
-        {
-            targetRotation *= Quaternion.AngleAxis(100 * turn * Time.deltaTime, Vector3.forward);
-        }
-        transform.rotation = targetRotation;
+            forward = Input.GetAxis("Vertical");
+            turn = Input.GetAxis("Horizontal");
+            run = Input.GetAxis("Run");
+            attack = Input.GetAxis("Fire1");
+            jump = Input.GetAxis("Jump");
+            if (jump >= 0.5)
+            {
+                anim.SetTrigger("Jump");
+            }
+            if (attack >= 0.5)
+            {
+                anim.SetTrigger("Attack");
+            }
+            if (run != 0 && speed <= 8)
+            {
+                speed += 1;
+            }
+            else if (run == 0)
+            {
+                if (speed >= 5)
+                {
+                    speed = speed - 1;
+                }
+            }
 
-        print(forward * Time.deltaTime * speed);
-        anim.SetFloat("velx", forward * Time.deltaTime * speed);
 
-        if (Input.anyKeyDown)
-        {
+            if (Mathf.Abs(turn) > 0.1f)
+            {
+                targetRotation *= Quaternion.AngleAxis(100 * turn * Time.deltaTime, Vector3.forward);
+            }
+            transform.rotation = targetRotation;
 
-            print(Input.inputString);
+            print(forward * Time.deltaTime * speed);
+            anim.SetFloat("velx", forward * Time.deltaTime * speed);
 
+            if (Input.anyKeyDown)
+            {
+
+                print(Input.inputString);
+
+            }
         }
     }
 
