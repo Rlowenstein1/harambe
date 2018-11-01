@@ -7,7 +7,7 @@ using UnityEngine;
 public class Gorilla_Move : MonoBehaviour {
 
     Quaternion targetRotation;
-    public float speed, forward, turn, run, attack;
+    public float speed, forward, turn, run, attack, jump;
     public Rigidbody gorilla;
     public Animator anim;
 
@@ -35,7 +35,12 @@ public class Gorilla_Move : MonoBehaviour {
         turn = Input.GetAxis("Horizontal");
         run = Input.GetAxis("Run");
         attack = Input.GetAxis("Fire1");
-        if (attack != 0)
+        jump = Input.GetAxis("Jump");
+        if(jump >= 0.5)
+        {
+            anim.SetTrigger("Jump");
+        }
+        if (attack >= 0.5)
         {
             anim.SetTrigger("Attack");
         } 
