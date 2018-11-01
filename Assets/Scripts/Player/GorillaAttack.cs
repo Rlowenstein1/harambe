@@ -7,36 +7,40 @@ public class GorillaAttack : MonoBehaviour {
     public int attackDamage = 20;
     public float timeBetweenAttacks = 0.15f;
 
+    Collider currEnemy;
     bool enemyInRange;
     float timer;
     TankHealth enemyHealth;
     Animator anim;
     AudioSource attackAudio;
-    GameObject enemy;
+    GameObject[] enemies;
 
 
     private void Awake()
     {
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyHealth = enemy.GetComponent<TankHealth>();
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //enemyHealth = enemy.GetComponent<TankHealth>();
         attackAudio = GetComponent<AudioSource>();
 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
+            currEnemy = other;
+            
         }
     }
 
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = false;
+            currEnemy = null;
         }
     }
 
@@ -53,8 +57,9 @@ public class GorillaAttack : MonoBehaviour {
             attackAudio.Play();
 
             if(enemyInRange){
-                Attack();
+                Attack(currEnemy);
             }
+            
 
         }
 
@@ -69,11 +74,14 @@ public class GorillaAttack : MonoBehaviour {
 
 
 
-    void Attack()
-    {
-        if (enemyHealth.currentHealth >= 0)
+    void Attack(Collider other) { 
+
+        TankHealth curr = other.gameObject.GetComponent<TankHealth>();
+        Debug.Log("Tank Health: " + curr.currentHealth);
+    
+        if (curr.currentHealth >= 0)
         {
-            enemyHealth.TakeDamage(attackDamage);
+            curr.TakeDamage(attackDamage);
         }
     }
 
