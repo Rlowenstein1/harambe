@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
         if (tanksAllowed && escapeAllowed)
         {
-            currObj = objs[Random.Range(0, 1)]; 
+            currObj = objs[Random.Range(0, 2)]; 
         }
         else if (tanksAllowed && !escapeAllowed)
         {
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour {
     void SpawnTanks() {
 
         if (!tankNumControl) {
-            numTanks = Random.Range(0, tankSpawners.Length);
+            numTanks = Random.Range(1, tankSpawners.Length + 1);
             Debug.Log("Num tanks: " + numTanks);
         }
 
@@ -128,6 +128,6 @@ public class GameManager : MonoBehaviour {
     IEnumerator RestartGame() {
 
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("gameMenu");
     }
 }
