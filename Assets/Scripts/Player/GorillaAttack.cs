@@ -5,6 +5,7 @@ using UnityEngine;
 public class GorillaAttack : MonoBehaviour {
 
     public int attackDamage = 20;
+    public int buildingAttackDamage = 35;
     public float timeBetweenAttacks = 0.15f;
 
     Collider currEnemy;
@@ -29,9 +30,9 @@ public class GorillaAttack : MonoBehaviour {
         if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
-            currEnemy = other;
-            
+            currEnemy = other;  
         }
+
     }
 
 
@@ -41,6 +42,20 @@ public class GorillaAttack : MonoBehaviour {
         {
             enemyInRange = false;
             currEnemy = null;
+        }
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Building" && Input.GetButtonDown("Fire1"))
+        {
+            BuildingHealth building = collision.gameObject.GetComponent<BuildingHealth>();
+
+            if (building.currentHealth >= 0)
+            {
+                building.TakeDamage(buildingAttackDamage);
+            }
+            
         }
     }
 
@@ -59,7 +74,6 @@ public class GorillaAttack : MonoBehaviour {
             if(enemyInRange){
                 Attack(currEnemy);
             }
-            
 
         }
 
@@ -77,6 +91,7 @@ public class GorillaAttack : MonoBehaviour {
     void Attack(Collider other) { 
 
         TankHealth curr = other.gameObject.GetComponent<TankHealth>();
+
         Debug.Log("Tank Health: " + curr.currentHealth);
     
         if (curr.currentHealth >= 0)
@@ -84,6 +99,5 @@ public class GorillaAttack : MonoBehaviour {
             curr.TakeDamage(attackDamage);
         }
     }
-
 
 }

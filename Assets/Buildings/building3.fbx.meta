@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c2dc9f701bff3bd4d89c833e022199c1
+guid: d865477f96932c04c80d8afb80b26c60
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -10,7 +10,7 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube1
-    2186277476908879412: ImportLogs
+    6400000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,9 +42,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 150
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
