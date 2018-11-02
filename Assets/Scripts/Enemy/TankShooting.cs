@@ -105,7 +105,8 @@ public class TankShooting : MonoBehaviour {
 
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
-            GorillaHealth gorillaHealth = shootHit.collider.GetComponent<GorillaHealth>();
+            GorillaHealth gorillaHealth = shootHit.collider.GetComponentInParent<GorillaHealth>();
+            //shootHit.collider.
             if (gorillaHealth != null)
             {
                 gorillaHealth.TakeDamage(damagePerShot, shootHit.point);
