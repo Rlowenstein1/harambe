@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class TankMovement : MonoBehaviour {
 
     
@@ -10,26 +11,30 @@ public class TankMovement : MonoBehaviour {
     Transform player;
     GorillaHealth playerHealth;
     TankHealth enemyHealth;
-    NavMeshAgent nav;
+    NavMeshAgent navMeshAgent;
 
 
     void Awake (){
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<GorillaHealth>();
         enemyHealth = GetComponent<TankHealth>();
-        nav = GetComponent<NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        if (navMeshAgent == null)
+        {
+            Debug.Log("NavMeshAgent Componet Missing!");
+        }
     }
 
 	
 	// Update is called once per frame
 	void Update () {
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0 )
         {
-            nav.SetDestination(player.position);
+            navMeshAgent.SetDestination(player.position);
         }
         else
         {
-            nav.enabled = false;
+            navMeshAgent.enabled = false;
         }
 
     }
