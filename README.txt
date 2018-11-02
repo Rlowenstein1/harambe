@@ -1,6 +1,20 @@
 Haram-bees
 Darren Trementozzi, Rudy Lowenstein, Neel Jha, Taylor Havrilak, FNU Richard
 
+
+Controls:
+
+Move Forwards - W, Up Arrow
+Move Backwards - S, Down Arrow
+Turn Right - D, Right Arrow
+Turn Left - A, Left Arrow
+Attack - Left Mouse Click, Ctrl
+
+Known Bugs:
+- Gorilla slides when walking and idle, this happens after he moves.
+- Kick back force when gorilla hits the buildings or the tanks.
+- Gorilla sometimes will fly to the sky when gets hit by a tank. 
+
 Gameplay:
 To play this game, download and open the .exe file. You will be brought to a start screen that displays a game menu
 with options "Start Game" and "Exit." Clicking on "Start Game," the game will begin and the camera will zoom and focus
@@ -28,7 +42,7 @@ Technical Requirements:
 -The HUD and animations communicate the success/failure of the player
 -The start menu is the first screen brought up
 -Pause screen has a restart and exit option
--The tanks are AI contolled and interactable with the character
+-The tanks are AI controlled and interactable with the character
 -The gorilla is animated and reacts to user input controls to trigger different animations
 with a blend tree
 -Character and animations use root motion
@@ -36,6 +50,9 @@ with a blend tree
 -There is auditory feedback or the tanks shooting and getting hit and ambient noise
 -The level is confined in boundaries by a wall so the player cannot leave
 -There are environment interactions such as the destroyable building objects
--The spacial simulation is consistent and the player is confined by Newtonion Physics
+-The spacial simulation is consistent and the player is confined by Newtonian Physics
 -The AI have different states such as searching for Harambe and shooting at him
 -The AI moves around buildings and follows Harambe.
+
+
+
