@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -91,12 +92,15 @@ public class GameManager : MonoBehaviour {
 
                 if (enemiesLeft <= 0) {
                     objText.text = "You Win!";
+                    StartCoroutine(RestartGame());
                 }
                 break;
             case 1:
                 if (player.transform.position.x >= escapeArea.transform.position.x && player.transform.position.z >= escapeArea.transform.position.z) {
                     objText.text = "You Win!";
+                    StartCoroutine(RestartGame());
                 }
+
                 break;
             case 2:
                 break;
@@ -119,5 +123,11 @@ public class GameManager : MonoBehaviour {
 
         aliveTanks = GameObject.FindGameObjectsWithTag("Enemy");
         objText.text = "Kill " + numTanks + " tanks";
+    }
+
+    IEnumerator RestartGame() {
+
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(0);
     }
 }
