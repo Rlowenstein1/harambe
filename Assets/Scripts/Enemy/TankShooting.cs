@@ -69,13 +69,17 @@ public class TankShooting : MonoBehaviour {
         playerP2 = player.transform.position;
         Vector3 delta = playerP2 - playerP1;
 
-        if (timer >= timeBetweenBullets && playerInRange && playerHealth.currentHealth > 0 && health.currentHealth > 0)
+        if(playerInRange)
         {
             Debug.Log("Looking at Harambe");
-            Vector3 aimVector = player.transform.position + delta - tank.transform.position;
+            Vector3 aimVector = player.transform.position - transform.position;
             float step = .2f * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(tank.transform.forward, aimVector, step, 0.0f);
             tank.transform.rotation = Quaternion.LookRotation(newDir);
+        }
+
+        if (timer >= timeBetweenBullets && playerInRange && playerHealth.currentHealth > 0 && health.currentHealth > 0)
+        {
             Shoot();
         }
 
@@ -126,6 +130,5 @@ public class TankShooting : MonoBehaviour {
             gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
         }
     }
-
 
 }
