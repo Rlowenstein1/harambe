@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
         if (tanksAllowed && escapeAllowed)
         {
-            currObj = objs[Random.Range(0, 1)]; 
+            currObj = objs[Random.Range(0, 2)]; 
         }
         else if (tanksAllowed && !escapeAllowed)
         {
@@ -91,12 +92,15 @@ public class GameManager : MonoBehaviour {
 
                 if (enemiesLeft <= 0) {
                     objText.text = "You Win!";
+                    StartCoroutine(RestartGame());
                 }
                 break;
             case 1:
                 if (player.transform.position.x >= escapeArea.transform.position.x && player.transform.position.z >= escapeArea.transform.position.z) {
                     objText.text = "You Win!";
+                    StartCoroutine(RestartGame());
                 }
+
                 break;
             case 2:
                 break;
@@ -108,7 +112,7 @@ public class GameManager : MonoBehaviour {
     void SpawnTanks() {
 
         if (!tankNumControl) {
-            numTanks = Random.Range(0, tankSpawners.Length);
+            numTanks = Random.Range(1, tankSpawners.Length + 1);
             Debug.Log("Num tanks: " + numTanks);
         }
 
@@ -119,5 +123,11 @@ public class GameManager : MonoBehaviour {
 
         aliveTanks = GameObject.FindGameObjectsWithTag("Enemy");
         objText.text = "Kill " + numTanks + " tanks";
+    }
+
+    IEnumerator RestartGame() {
+
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("gameMenu");
     }
 }
