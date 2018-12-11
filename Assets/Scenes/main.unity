@@ -3667,8 +3667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gorilla: {fileID: 54435123694140684, guid: fcf912181eae8498eae9265cb81c45c6, type: 2}
-  smoothTime: 1
-  maxSpeed: 50
+  smoothTime: 0.5
+  maxSpeed: 100
   desiredPose: {fileID: 296359862}
 --- !u!1 &582615557
 GameObject:
