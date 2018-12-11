@@ -42,10 +42,13 @@ public class BuildingHealth : MonoBehaviour {
         {
             Destroy(gameObject);
 
-            // Instantiate new damaged building model in place of the current
-            var damagedBuilding = Instantiate(prefabBuilding, transform.position, Quaternion.identity);
-            damagedBuilding.gameObject.tag = "Building";
-            damagedBuilding.AddComponent<BuildingHealth>();
+            if (prefabBuilding != null)
+            {
+                // Instantiate new damaged building model in place of the current
+                var damagedBuilding = Instantiate(prefabBuilding, transform.position, Quaternion.identity);
+                damagedBuilding.gameObject.tag = "Building";
+                damagedBuilding.AddComponent<BuildingHealth>();
+            }
         }
     }
 }
