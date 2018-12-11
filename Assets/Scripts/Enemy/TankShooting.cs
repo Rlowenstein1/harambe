@@ -35,7 +35,8 @@ public class TankShooting : MonoBehaviour {
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
-        tank = GameObject.FindGameObjectWithTag("Enemy");
+        //tank = GameObject.FindGameObjectWithTag("Enemy");
+        tank = this.transform.parent.gameObject;
         health = tank.GetComponent<TankHealth>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<GorillaHealth>();
