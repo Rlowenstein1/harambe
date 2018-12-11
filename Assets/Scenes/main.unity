@@ -686,6 +686,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &131116457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1345,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &238910318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,6 +2829,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &395569100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,6 +4172,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &668130906
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,6 +4342,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &680376495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,6 +4763,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1001 &762985320
 Prefab:
   m_ObjectHideFlags: 0
@@ -5555,6 +5573,48 @@ Transform:
   m_Father: {fileID: 590859779}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 89.942, z: 0}
+--- !u!1001 &862390494
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 29.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 23.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 138.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365019049067862, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d58c7cf4098871409a70faa20d850e4, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &867378624
 GameObject:
   m_ObjectHideFlags: 0
@@ -6385,6 +6445,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1012559083
 GameObject:
   m_ObjectHideFlags: 0
@@ -6529,6 +6592,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1057917674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6742,6 +6808,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1001 &1085164339
 Prefab:
   m_ObjectHideFlags: 0
@@ -6820,6 +6889,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1112911504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7617,6 +7689,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1001 &1213095636
 Prefab:
   m_ObjectHideFlags: 0
@@ -7695,6 +7770,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1219949170
 GameObject:
   m_ObjectHideFlags: 0
@@ -7858,6 +7936,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1235604830
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,6 +8634,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1358575359
 GameObject:
   m_ObjectHideFlags: 0
@@ -9239,6 +9323,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1512346422
 GameObject:
   m_ObjectHideFlags: 0
@@ -10738,6 +10825,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1743946956
 GameObject:
   m_ObjectHideFlags: 0
@@ -10906,6 +10996,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1777032798
 GameObject:
   m_ObjectHideFlags: 0
@@ -11158,6 +11251,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1001 &1854181843
 Prefab:
   m_ObjectHideFlags: 0
@@ -11236,6 +11332,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1856466617
 GameObject:
   m_ObjectHideFlags: 0
@@ -11585,6 +11684,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 758d413b10c580c49b4f7d689e7ed289, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!4 &1890804456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 815bf21e7d2b0554fb786e02ca0fc147,
@@ -11754,6 +11856,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!1 &1942789262
 GameObject:
   m_ObjectHideFlags: 0
@@ -12056,6 +12161,9 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   prefabBuilding: {fileID: 100000, guid: 486fdb237b921d84f854ee8aa435a574, type: 3}
+  dustParticles: {fileID: 1551965976831386, guid: 5d58c7cf4098871409a70faa20d850e4,
+    type: 2}
+  dust: {fileID: 0}
 --- !u!4 &1976804327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 46853f9b1eaa31c40bb550ff19593f77,

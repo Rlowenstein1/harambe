@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199374762469875328}
   m_Layer: 0
   m_Name: DustParticles
-  m_TagString: Untagged
+  m_TagString: Dust
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
