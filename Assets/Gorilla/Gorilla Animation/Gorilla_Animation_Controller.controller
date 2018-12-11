@@ -13,37 +13,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: vely
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: velx
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Die
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Jump
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -478,6 +478,30 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &1101451083186404932
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: velx
+    m_EventTreshold: -0.000005
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102100626456180056}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.49438202
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101466540012085866
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -679,6 +703,30 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &1101846539077593948
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: velx
+    m_EventTreshold: 0.00000005
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102748155996278596}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.3181818
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101849950726662796
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -735,6 +783,7 @@ AnimatorState:
   - {fileID: 1101175333919960770}
   - {fileID: 1101652448989523742}
   - {fileID: 1101275628818969102}
+  - {fileID: 1101846539077593948}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -899,6 +948,7 @@ AnimatorState:
   - {fileID: 1101333029139958656}
   - {fileID: 1101789473309704772}
   - {fileID: 1101282454854920150}
+  - {fileID: 1101451083186404932}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1002,19 +1052,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102404791049031944}
-    m_Position: {x: 180, y: 240, z: 0}
+    m_Position: {x: 48, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102748155996278596}
     m_Position: {x: 180, y: 468, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102559670514221920}
-    m_Position: {x: 648, y: 288, z: 0}
+    m_Position: {x: 780, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102543960406359386}
-    m_Position: {x: 336, y: 324, z: 0}
+    m_Position: {x: 480, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102186182870352086}
-    m_Position: {x: -120, y: 240, z: 0}
+    m_Position: {x: -228, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102151326820593422}
     m_Position: {x: 408, y: 528, z: 0}
