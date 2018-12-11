@@ -77,13 +77,6 @@ public class GorillaAttack : MonoBehaviour {
 
         }
 
-        if (Input.anyKeyDown)
-        {
-
-            print(Input.inputString);
-
-        }
-
     }
 
 

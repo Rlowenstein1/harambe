@@ -15,7 +15,7 @@ public class Camera_Follow : MonoBehaviour
 
     void LateUpdate()
     {
-        desiredPose = gorilla.transform.Find("CamPos");
+        //desiredPose = gorilla.transform.Find("CamPos");
         if (desiredPose != null)
         {
             transform.position = Vector3.SmoothDamp(transform.position, desiredPose.position, ref currentPositionCorrectionVelocity, smoothTime, maxSpeed, Time.deltaTime);

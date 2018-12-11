@@ -19,12 +19,13 @@ public class TankShooting : MonoBehaviour {
     Light gunLight;
     float effectsDisplayTime = 0.2f;
 
-
     GameObject player;
     GameObject tank;
     GorillaHealth playerHealth;
     TankHealth health;
     bool playerInRange;
+    Vector3 playerP1;
+    Vector3 playerP2;
 
 
     private void Awake()
@@ -34,12 +35,12 @@ public class TankShooting : MonoBehaviour {
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
-
-        tank = GameObject.FindGameObjectWithTag("Enemy");
+        //tank = GameObject.FindGameObjectWithTag("Enemy");
+        tank = this.transform.parent.gameObject;
         health = tank.GetComponent<TankHealth>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<GorillaHealth>();
-
+        playerP1 = playerP2 = player.transform.position;
 
     }
 
@@ -65,6 +66,18 @@ public class TankShooting : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
+        playerP1 = playerP2;
+        playerP2 = player.transform.position;
+        Vector3 delta = playerP2 - playerP1;
+
+        if(playerInRange)
+        {
+            Debug.Log("Looking at Harambe");
+            Vector3 aimVector = player.transform.position - transform.position;
+            float step = .2f * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(tank.transform.forward, aimVector, step, 0.0f);
+            tank.transform.rotation = Quaternion.LookRotation(newDir);
+        }
 
         if (timer >= timeBetweenBullets && playerInRange && playerHealth.currentHealth > 0 && health.currentHealth > 0)
         {
@@ -118,6 +131,5 @@ public class TankShooting : MonoBehaviour {
             gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
         }
     }
-
 
 }

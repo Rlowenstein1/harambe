@@ -30,6 +30,9 @@ public class TankMovement : MonoBehaviour {
 	void Update () {
         if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0 )
         {
+            float step = .2f * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(navMeshAgent.transform.forward, player.position, step, 0.0f);
+            navMeshAgent.transform.rotation = Quaternion.LookRotation(newDir);
             navMeshAgent.SetDestination(player.position);
         }
         else

@@ -67,21 +67,13 @@ public class Gorilla_Move : MonoBehaviour {
             }
             transform.rotation = targetRotation;
 
-            print(forward * Time.deltaTime * speed);
             anim.SetFloat("velx", forward * Time.deltaTime * speed);
 
-            if (Input.anyKeyDown)
-            {
-
-                print(Input.inputString);
-
-            }
         }
     }
 
     void OnAnimatorMove()
     {      
         this.transform.position = anim.rootPosition;
-        print(anim.rootPosition);
     }
 }
