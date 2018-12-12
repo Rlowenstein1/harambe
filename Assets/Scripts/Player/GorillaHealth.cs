@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class GorillaHealth : MonoBehaviour {
@@ -55,6 +56,7 @@ public class GorillaHealth : MonoBehaviour {
     {
         isDead = true;
         anim.SetTrigger("Die");
+        StartCoroutine(RestartGame());
         //playerShooting.DisableEffects();
 
         //anim.SetTrigger("Die");
@@ -64,6 +66,12 @@ public class GorillaHealth : MonoBehaviour {
 
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("gameMenu");
     }
 
 }
